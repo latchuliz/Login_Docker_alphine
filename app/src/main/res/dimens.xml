@@ -1,0 +1,9 @@
+<resources>
+    <dimen name="font20">22sp</dimen>
+    <dimen name="font18">20sp</dimen>
+    <dimen name="font16">18sp</dimen>
+    <dimen name="font14">16sp</dimen>
+    <dimen name="font12">14sp</dimen>
+    <dimen name="font10">12sp</dimen>
+    <dimen name="font8">10sp</dimen>
+</resources>

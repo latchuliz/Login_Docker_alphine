@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.neopharma.datavault.utility.Utility" />
+
+        <variable
+            name="taskData"
+            type="com.neopharma.datavault.model.task.Task" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_2"
+            android:layout_marginBottom="@dimen/default_6"
+            app:cardElevation="@dimen/default_2">
+
+            <RelativeLayout
+                android:id="@+id/donor_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="@dimen/layout_weight_sum1"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/default_16"
+                android:paddingBottom="@dimen/default_16">
+
+                <TextView
+                    android:id="@+id/task_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="8"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/default_16"
+                    android:paddingEnd="@dimen/default_10"
+                    android:singleLine="true"
+                    android:text="@{taskData.name}"
+                    android:textColor="@color/colorHistory"
+                    android:textSize="@dimen/font14"
+                    tools:text="@string/temp_case_id" />
+
+                <ImageView
+                    android:id="@+id/task_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/donor"
+                    app:visibility="@{taskData.hasDonor()}" />
+
+                <TextView
+                    android:id="@+id/schedule_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center"
+                    android:layout_weight="@dimen/layout_weight4"
+                    android:paddingEnd="@dimen/default_16"
+                    android:text="@{Utility.formattedDate(taskData.scheduleDate)}"
+                    android:textColor="@color/colorHistory"
+                    android:textSize="@dimen/font14"
+                    tools:text="@string/temp_sync" />
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>

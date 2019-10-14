@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        tools:context=".fragments.initial.InfoFragment">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="@dimen/layout_weight_sum1"
+            android:clipToPadding="false"
+            android:overScrollMode="never" />
+
+        <com.neopharma.datavault.widget.CirclePageIndicator
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/default_124"
+            android:padding="@dimen/default_10"
+            app:fillColor="?android:colorPrimary"
+            app:pageColor="@color/colorOverlay"
+            app:radius="@dimen/default_3"
+            app:strokeColor="@color/colorOverlay"
+            app:strokeWidth="@dimen/default_1" />
+
+        <ImageView
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/default_165"
+            android:padding="@dimen/default_8"
+            android:src="@drawable/arrow" />
+
+        <TextView
+            android:id="@+id/skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:fontFamily="@font/roboto_medium"
+            android:padding="@dimen/default_12"
+            android:text="@string/tmp_skip"
+            android:textColor="?android:colorPrimary"
+            android:textStyle="bold" />
+
+    </FrameLayout>
+</layout>

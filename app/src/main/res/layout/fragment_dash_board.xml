@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.neopharma.datavault.fragments.viewmodel.DashBoardViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.main.DashBoardFragment">
+
+        <LinearLayout
+            android:id="@+id/sync"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/sync"
+                android:tint="?colorPrimary" />
+
+            <TextView
+                android:id="@+id/last_sync"
+                style="@style/DashboardWidgetTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/layout_height48"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/default_5"
+                android:gravity="center"
+                android:text="@string/last_sync"
+                android:textColor="@color/colorHistory" />
+        </LinearLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/start_test"
+            android:layout_below="@+id/sync">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height96"
+                        android:layout_marginLeft="@dimen/default_20"
+                        android:layout_marginRight="@dimen/default_20"
+                        card_view:cardCornerRadius="@dimen/default_6"
+                        card_view:cardElevation="@dimen/default_10">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal"
+                            android:weightSum="@dimen/layout_weight_sum1">
+
+                            <LinearLayout
+                                android:layout_width="@dimen/layout_width0"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/layout_weight4"
+                                android:background="@drawable/button_rect_blue_left_radius"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/donor_count_icon" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="@dimen/layout_width0"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/default_20"
+                                android:layout_weight="@dimen/layout_weight6"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/donor_count"
+                                    style="@style/DashboardWidgetTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/default_10"
+                                    android:gravity="center"
+                                    android:text="@string/temp_donor_count" />
+
+                                <TextView
+                                    android:id="@+id/donor_count_value"
+                                    style="@style/DashboardWidgetSubTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@{data.getdCount}"
+                                    tools:text="@string/temp_25" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height96"
+                        android:layout_marginLeft="@dimen/default_20"
+                        android:layout_marginTop="@dimen/default_30"
+                        android:layout_marginRight="@dimen/default_20"
+                        card_view:cardCornerRadius="@dimen/default_6"
+                        card_view:cardElevation="@dimen/default_10">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal"
+                            android:weightSum="@dimen/layout_weight_sum1">
+
+                            <LinearLayout
+                                android:layout_width="@dimen/layout_width0"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/layout_weight4"
+                                android:background="@drawable/button_rect_blue_left_radius"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/kit_count" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="@dimen/layout_width0"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/default_20"
+                                android:layout_weight="@dimen/layout_weight6"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/kit_count"
+                                    style="@style/DashboardWidgetTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/default_10"
+                                    android:gravity="center"
+                                    android:text="@string/temp_kit_count" />
+
+                                <TextView
+                                    android:id="@+id/kit_value"
+                                    style="@style/DashboardWidgetSubTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@{data.getkCount}"
+                                    tools:text="@string/temp_12" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height96"
+                        android:layout_marginLeft="@dimen/default_20"
+                        android:layout_marginTop="@dimen/default_30"
+                        android:layout_marginRight="@dimen/default_20"
+                        card_view:cardCornerRadius="@dimen/default_6"
+                        card_view:cardElevation="@dimen/default_10">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal"
+                            android:weightSum="@dimen/layout_weight_sum1">
+
+                            <LinearLayout
+                                android:layout_width="@dimen/layout_width0"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/layout_weight4"
+                                android:background="@drawable/button_rect_blue_left_radius"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/sync_dash" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="@dimen/layout_width0"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/default_20"
+                                android:layout_weight="@dimen/layout_weight6"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/pending_test"
+                                    style="@style/DashboardWidgetTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/default_10"
+                                    android:gravity="center"
+                                    android:text="@string/temp_pending_test_for_sync" />
+
+                                <TextView
+                                    android:id="@+id/pending_test_value"
+                                    style="@style/DashboardWidgetSubTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@{data.getpCount}" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height96"
+                        android:layout_marginLeft="@dimen/default_20"
+                        android:layout_marginTop="@dimen/default_30"
+                        android:layout_marginRight="@dimen/default_20"
+                        android:layout_marginBottom="@dimen/default_40"
+                        card_view:cardCornerRadius="@dimen/default_6"
+                        card_view:cardElevation="@dimen/default_10">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal"
+                            android:weightSum="@dimen/layout_weight_sum1">
+
+                            <LinearLayout
+                                android:layout_width="@dimen/layout_width0"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/layout_weight4"
+                                android:background="@drawable/button_rect_blue_left_radius"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/task_dashboard" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="@dimen/layout_width0"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/default_20"
+                                android:layout_weight="@dimen/layout_weight6"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/today_task"
+                                    style="@style/DashboardWidgetTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/default_10"
+                                    android:gravity="center"
+                                    android:text="@string/temp_today_task" />
+
+                                <TextView
+                                    android:id="@+id/today_task_value"
+                                    style="@style/DashboardWidgetSubTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@{data.gettCount}" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </ScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/start_test"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height48"
+            android:layout_alignParentBottom="true"
+            android:background="?colorPrimary"
+            android:gravity="center"
+            android:paddingLeft="@dimen/default_40"
+            android:paddingRight="@dimen/default_40">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:text="@string/temp_start_test"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font16" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_10"
+                android:src="@drawable/icon_arrow"
+                android:tint="@color/colorWhite" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

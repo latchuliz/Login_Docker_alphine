@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/donor_lyt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:colorPrimary"
+                android:paddingTop="@dimen/default_8"
+                android:paddingBottom="@dimen/default_8">
+
+                <TextView
+                    android:id="@+id/donor_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/default_16"
+                    android:text="@string/donor_name"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font16" />
+
+                <TextView
+                    android:id="@+id/task_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/task_name"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font16"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/text_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/default_16"
+                    android:paddingLeft="@dimen/default_12"
+                    android:paddingRight="@dimen/default_12"
+                    android:text="@string/temp_status"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font16" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/donor_task_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/default_14" />
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/no_donor"
+            layout="@layout/no_donors"
+            android:visibility="gone" />
+    </LinearLayout>
+</layout>

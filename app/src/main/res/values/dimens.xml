@@ -1,0 +1,81 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="font22">24sp</dimen>
+    <dimen name="font20">22sp</dimen>
+    <dimen name="font18">20sp</dimen>
+    <dimen name="font16">18sp</dimen>
+    <dimen name="font14">16sp</dimen>
+    <dimen name="font12">14sp</dimen>
+    <dimen name="font10">12sp</dimen>
+    <dimen name="font8">10sp</dimen>
+
+    <dimen name="layout_width0">0dp</dimen>
+    <dimen name="layout_width50">50dp</dimen>
+    <dimen name="layout_width60">60dp</dimen>
+    <dimen name="layout_width72">72dp</dimen>
+    <dimen name="layout_width100">100dp</dimen>
+    <dimen name="layout_width200">200dp</dimen>
+    <dimen name="layout_width240">240dp</dimen>
+    <dimen name="layout_width180">180dp</dimen>
+
+    <dimen name="layout_height0">0dp</dimen>
+    <dimen name="layout_height1">1dp</dimen>
+    <dimen name="layout_height10">10dp</dimen>
+    <dimen name="layout_height40">40dp</dimen>
+    <dimen name="layout_height50">50dp</dimen>
+    <dimen name="layout_height42">42dp</dimen>
+    <dimen name="layout_height48">48dp</dimen>
+    <dimen name="layout_height56">56dp</dimen>
+    <dimen name="layout_height60">60dp</dimen>
+    <dimen name="layout_height96">96dp</dimen>
+    <dimen name="layout_height100">100dp</dimen>
+    <dimen name="layout_height104">104dp</dimen>
+    <dimen name="layout_height160">160dp</dimen>
+    <dimen name="layout_height172">172dp</dimen>
+    <dimen name="layout_height180">180dp</dimen>
+    <dimen name="layout_height200">200dp</dimen>
+    <dimen name="layout_height240">240dp</dimen>
+
+    <dimen name="layout_weight3">0.3</dimen>
+    <dimen name="layout_weight4">0.4</dimen>
+    <dimen name="layout_weight5">0.5</dimen>
+    <dimen name="layout_weight6">0.6</dimen>
+    <dimen name="layout_weight7">0.7</dimen>
+    <dimen name="layout_weight_sum1">1</dimen>
+
+    <dimen name="default_1">1dp</dimen>
+    <dimen name="default_2">2dp</dimen>
+    <dimen name="default_3">3dp</dimen>
+    <dimen name="default_4">4dp</dimen>
+    <dimen name="default_5">5dp</dimen>
+    <dimen name="default_6">6dp</dimen>
+    <dimen name="default_7">7dp</dimen>
+    <dimen name="default_8">8dp</dimen>
+    <dimen name="default_10">10dp</dimen>
+    <dimen name="default_12">12dp</dimen>
+    <dimen name="default_14">14dp</dimen>
+    <dimen name="default_16">16dp</dimen>
+    <dimen name="default_18">18dp</dimen>
+    <dimen name="default_20">20dp</dimen>
+    <dimen name="default_24">24dp</dimen>
+    <dimen name="default_25">25dp</dimen>
+    <dimen name="default_30">30dp</dimen>
+    <dimen name="default_40">40dp</dimen>
+    <dimen name="default_60">60dp</dimen>
+    <dimen name="default_70">70dp</dimen>
+    <dimen name="default_72">72dp</dimen>
+    <dimen name="default_84">84dp</dimen>
+    <dimen name="default_90">90dp</dimen>
+    <dimen name="default_124">124dp</dimen>
+    <dimen name="default_130">130dp</dimen>
+    <dimen name="default_142">142dp</dimen>
+    <dimen name="default_165">165dp</dimen>
+
+
+</resources>

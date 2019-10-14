@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fieldtest"
+            type="com.neopharma.datavault.data.local.entity.FieldTest" />
+    </data>
+
+    <ScrollView
+        android:id="@+id/summary_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/default_16"
+                android:gravity="center"
+                android:text="Donor Information"
+                android:textSize="@dimen/font16" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_16"
+                android:layout_marginTop="@dimen/default_16"
+                android:layout_marginEnd="@dimen/default_16"
+                card_view:cardCornerRadius="@dimen/default_6"
+                card_view:cardElevation="@dimen/default_10">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_16"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/area_sum"
+                        android:textColor="@color/colorTestKit" />
+
+                    <TextView
+                        android:id="@+id/sum_area"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/layout_height42"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@{fieldtest.area}"
+                        android:textSize="@dimen/font14"
+                        tools:text="area" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height1"
+                        android:background="@color/colorGrey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_8"
+                        android:gravity="center"
+                        android:text="@string/task_sum"
+                        android:textColor="@color/colorTestKit" />
+
+                    <TextView
+                        android:id="@+id/sum_task_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/layout_height42"
+                        android:gravity="center"
+                        android:text="@{fieldtest.taskName != null ? fieldtest.taskName : @string/general_}"
+                        android:textSize="@dimen/font14"
+                        tools:text="QA Test" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height1"
+                        android:background="@color/colorGrey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_8"
+                        android:gravity="center"
+                        android:text="@string/name"
+                        android:textColor="@color/colorTestKit" />
+
+                    <TextView
+                        android:id="@+id/sum_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/layout_height42"
+                        android:gravity="center"
+                        android:text="@{fieldtest.name}"
+                        android:textSize="@dimen/font14"
+                        tools:text="Johndoe" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height1"
+                        android:background="@color/colorGrey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_8"
+                        android:gravity="center"
+                        android:text="@string/email"
+                        android:textColor="@color/colorTestKit" />
+
+                    <TextView
+                        android:id="@+id/sum_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/layout_height42"
+                        android:gravity="center"
+                        android:text="@{fieldtest.email}"
+                        android:textSize="@dimen/font14"
+                        tools:text="jogndoe@gmail.com" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height1"
+                        android:background="@color/colorGrey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_8"
+                        android:gravity="center"
+                        android:text="@string/tmp_ssn"
+                        android:textColor="@color/colorTestKit" />
+
+                    <TextView
+                        android:id="@+id/sum_ssn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/layout_height42"
+                        android:gravity="center"
+                        android:text="@{fieldtest.ssn}"
+                        android:textSize="@dimen/font14"
+                        tools:text="SSN001" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height1"
+                        android:background="@color/colorGrey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_8"
+                        android:gravity="center"
+                        android:text="@string/tmp_dob"
+                        android:textColor="@color/colorTestKit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/layout_height42"
+                        android:gravity="center"
+                        android:text="@{fieldtest.dob}"
+                        android:textSize="@dimen/font14"
+                        tools:text="Jan 15, 1993" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height1"
+                        android:background="@color/colorGrey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_8"
+                        android:gravity="center"
+                        android:text="@string/gender"
+                        android:textColor="@color/colorTestKit" />
+
+                    <TextView
+                        android:id="@+id/sum_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/layout_height42"
+                        android:gravity="center"
+                        android:text="@{fieldtest.gender}"
+                        android:textSize="@dimen/font14"
+                        tools:text="Male" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height1"
+                        android:background="@color/colorGrey" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_8"
+                        android:gravity="center"
+                        android:text="@string/tmp_mobile_number"
+                        android:textColor="@color/colorTestKit" />
+
+                    <TextView
+                        android:id="@+id/sum_mobile_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/layout_height42"
+                        android:gravity="center"
+                        android:text="@{fieldtest.mobileNumber}"
+                        android:textSize="@dimen/font14"
+                        tools:text="9876543210" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height1"
+                        android:background="@color/colorGrey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_8"
+                        android:gravity="center"
+                        android:text="@string/address"
+                        android:textColor="@color/colorTestKit" />
+
+                    <TextView
+                        android:id="@+id/sum_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:paddingTop="@dimen/default_8"
+                        android:paddingBottom="@dimen/default_8"
+                        android:text="@{fieldtest.address}"
+                        android:textSize="@dimen/font14"
+                        tools:text="Flat no.162, munuswamy salai," />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height1"
+                        android:background="@color/colorGrey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_8"
+                        android:gravity="center"
+                        android:text="@string/tmp_donor_image_sum"
+                        android:textColor="@color/colorTestKit" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/sum_image_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height1"
+                        android:background="@color/colorGrey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_8"
+                        android:gravity="center"
+                        android:text="Id Type"
+                        android:textColor="@color/colorTestKit" />
+
+                    <TextView
+                        android:id="@+id/id_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:paddingTop="@dimen/default_8"
+                        android:paddingBottom="@dimen/default_8"
+                        android:textSize="@dimen/font14"
+                        tools:text="Others" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height1"
+                        android:background="@color/colorGrey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_8"
+                        android:gravity="center"
+                        android:text="Id No"
+                        android:textColor="@color/colorTestKit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:paddingTop="@dimen/default_8"
+                        android:paddingBottom="@dimen/default_8"
+                        android:text="@{fieldtest.idReferenceNo}"
+                        android:textSize="@dimen/font14"
+                        tools:text="123456" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height1"
+                        android:background="@color/colorGrey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_8"
+                        android:gravity="center"
+                        android:text="Id Image"
+                        android:textColor="@color/colorTestKit" />
+
+                    <ImageView
+                        android:id="@+id/id_image"
+                        android:layout_width="@dimen/default_60"
+                        android:layout_height="@dimen/default_60"
+                        android:padding="@dimen/default_1"
+                        app:customUrl="@{fieldtest.idImage.path}"
+                        tools:src="@drawable/add_image" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/default_16"
+                android:gravity="center"
+                android:text="Kit Information"
+                android:textSize="@dimen/font16" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_16"
+                android:layout_marginTop="@dimen/default_16"
+                android:layout_marginEnd="@dimen/default_16"
+                card_view:cardCornerRadius="@dimen/default_6"
+                card_view:cardElevation="@dimen/default_10">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_16"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/kit_id_sum"
+                        android:textColor="@color/colorTestKit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/layout_height42"
+                        android:gravity="center"
+                        android:text="@{fieldtest.kitId}"
+                        android:textSize="@dimen/font14"
+                        tools:text="48795" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height1"
+                        android:background="@color/colorGrey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_8"
+                        android:gravity="center"
+                        android:text="@string/tmp_kit_image_sum"
+                        android:textColor="@color/colorTestKit" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/sum_kit_image_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height1"
+                        android:background="@color/colorGrey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/tampering_type"
+                        android:textColor="@color/colorTestKit" />
+
+                    <TextView
+                        android:id="@+id/tampering_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/layout_height42"
+                        android:gravity="center"
+                        android:textSize="@dimen/font14"
+                        tools:text="48795" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height1"
+                        android:background="@color/colorGrey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/tmp_tampering_ref"
+                        android:textColor="@color/colorTestKit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/layout_height42"
+                        android:gravity="center"
+                        android:text="@={fieldtest.tamperingReference}"
+                        android:textSize="@dimen/font14"
+                        tools:text="48795" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/default_16"
+                android:gravity="center"
+                android:text="@string/tmp_result_tit"
+                android:textSize="@dimen/font16" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_16"
+                card_view:cardCornerRadius="@dimen/default_6"
+                card_view:cardElevation="@dimen/default_10">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_16"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/tmp_result_sum"
+                        android:textColor="@color/colorTestKit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/layout_height42"
+                        android:gravity="center"
+                        android:text="@{fieldtest.result}"
+                        android:textSize="@dimen/font14"
+                        app:donorStatus="@{fieldtest.result}" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height1"
+                        android:background="@color/colorGrey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/adulterant_result"
+                        android:textColor="@color/colorTestKit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/layout_height42"
+                        android:gravity="center"
+                        android:text="@{fieldtest.adulterantResult}"
+                        android:textSize="@dimen/font14"
+                        app:adulterantStatus="@{fieldtest.adulterantResult}" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height1"
+                        android:background="@color/colorGrey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_8"
+                        android:gravity="center"
+                        android:text="@string/comments_sum"
+                        android:textColor="@color/colorTestKit" />
+
+                    <TextView
+                        android:id="@+id/sum_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:paddingTop="@dimen/default_8"
+                        android:paddingBottom="@dimen/default_8"
+                        android:text="@{fieldtest.officerComments}"
+                        android:textSize="@dimen/font14"
+                        tools:text="Lorem ipsum is simply gfdgfdgfd gdfgfdgh gfdgfd dummy gdfgfgf gfdgfd gfdgfdgfd gsgfdgfdg  gfdgfdgfd gfdgfdgfd text printing.." />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height1"
+                        android:background="@color/colorGrey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_8"
+                        android:gravity="center"
+                        android:text="@string/tmp_test_kit_sum"
+                        android:textColor="@color/colorTestKit" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/sum_test_image_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/default_16"
+                android:layout_marginTop="@dimen/default_10"
+                android:layout_marginEnd="@dimen/default_16"
+                android:gravity="center"
+                android:text="@string/submit_note"
+                android:textColor="@color/colorRed" />
+
+            <TextView
+                android:id="@+id/sum_submit"
+                android:layout_width="@dimen/layout_width200"
+                android:layout_height="@dimen/layout_height42"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/default_24"
+                android:layout_marginBottom="@dimen/default_24"
+                android:background="@drawable/button_rect_blue"
+                android:gravity="center"
+                android:text="@string/tmp_submit"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                android:id="@+id/sum_cancel"
+                android:layout_width="@dimen/layout_width200"
+                android:layout_height="@dimen/layout_height42"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/default_24"
+                android:background="@drawable/button_rect_blue_border"
+                android:gravity="center"
+                android:text="@string/tmp_edit"
+                android:textColor="?android:colorPrimary" />
+        </LinearLayout>
+    </ScrollView>
+</layout>
+
+

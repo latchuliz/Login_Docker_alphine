@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/default_16"
+        android:layout_marginRight="@dimen/default_16"
+        android:layout_marginTop="@dimen/default_24"
+        android:orientation="vertical"
+        tools:context=".fragments.main.SettingFragment"
+        tools:ignore="ContentDescription">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/synchronization"
+            android:textColor="@color/colorSync"
+            android:textSize="@dimen/font14" />
+
+        <RelativeLayout
+            android:id="@+id/lyt_wifi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/default_24">
+
+            <TextView
+                android:id="@+id/auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toStartOf="@+id/sync_switch_button"
+                android:text="@string/auto"
+                android:textColor="@color/colorTestKit"
+                android:textSize="@dimen/font16" />
+
+            <Switch
+                android:id="@+id/sync_switch_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/default_20"
+                android:layout_marginRight="@dimen/default_20"
+                android:thumb="@drawable/customswitchselector"
+                android:track="@drawable/custom_track" />
+
+            <TextView
+                android:id="@+id/manual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@+id/sync_switch_button"
+                android:text="@string/manual"
+                android:textColor="@color/colorDashText"
+                android:textSize="@dimen/font16" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height1"
+            android:background="@color/colorDarkGrey"
+            android:elevation="@dimen/default_1" />
+
+        <TextView
+            android:id="@+id/change_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height56"
+            android:gravity="center"
+            android:text="@string/change_password"
+            android:textColor="@color/colorDashText"
+            android:textSize="@dimen/font14" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height1"
+            android:background="@color/colorDarkGrey"
+            android:elevation="@dimen/default_1" />
+
+    </LinearLayout>
+</layout>

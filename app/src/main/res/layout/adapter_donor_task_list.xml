@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="donorData"
+            type="com.neopharma.datavault.model.donor.Donor" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_6"
+            android:layout_marginBottom="@dimen/default_6"
+            app:cardElevation="@dimen/default_2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_8"
+                android:layout_marginBottom="@dimen/default_8">
+
+                <TextView
+                    android:id="@+id/donor_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/default_16"
+                    android:ellipsize="end"
+                    android:ems="5"
+                    android:maxLines="2"
+                    android:text="@{donorData.name}"
+                    android:textColor="@color/colorHistory"
+                    android:textSize="@dimen/font14" />
+
+                <TextView
+                    android:id="@+id/task_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:ellipsize="end"
+                    android:ems="6"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:singleLine="true"
+                    android:text="@{donorData.task.taskName}"
+                    android:textColor="@color/colorHistory"
+                    android:textSize="@dimen/font14"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/get_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/default_16"
+                    android:background="@drawable/button_rect_blue"
+                    android:paddingLeft="@dimen/default_12"
+                    android:paddingTop="@dimen/default_6"
+                    android:paddingRight="@dimen/default_12"
+                    android:paddingBottom="@dimen/default_6"
+                    android:text="@string/temp_get_start"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font12" />
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>

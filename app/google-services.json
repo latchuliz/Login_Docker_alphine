@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "129241051764",
+    "firebase_url": "https://datavault-23764.firebaseio.com",
+    "project_id": "datavault-23764",
+    "storage_bucket": "datavault-23764.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129241051764:android:021e92e05339f46f",
+        "android_client_info": {
+          "package_name": "com.neopharma.datavault"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "129241051764-6l1p2bu7bvtc9460g3g879elqu7a6u3d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.neopharma.datavault",
+            "certificate_hash": "a676f382cf14b01cf5c24131d759f6a4e727b6ec"
+          }
+        },
+        {
+          "client_id": "129241051764-dap0kja08786kpgk2eobjdge05b64ik9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwPcbZCQbldxuP3U0lbPayo4xVqJDfEow"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "129241051764-dap0kja08786kpgk2eobjdge05b64ik9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129241051764:android:40843f0312946626",
+        "android_client_info": {
+          "package_name": "com.neopharma.datavault.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "129241051764-th455isf6eoef8841m282gvhv0a4ulv4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.neopharma.datavault.dev",
+            "certificate_hash": "a676f382cf14b01cf5c24131d759f6a4e727b6ec"
+          }
+        },
+        {
+          "client_id": "129241051764-dap0kja08786kpgk2eobjdge05b64ik9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwPcbZCQbldxuP3U0lbPayo4xVqJDfEow"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "129241051764-dap0kja08786kpgk2eobjdge05b64ik9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,42 @@
+<resources>
+
+    <style name="DarkTheme.Radiobutton" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/colorBlue</item>
+        <item name="colorControlActivated">@color/colorBlue</item>
+        <item name="android:colorAccent">@color/colorBlue</item>
+    </style>
+
+    <style name="DarkTheme.Radiobutton.Text" parent="Theme.AppCompat.Light">
+        <item name="android:textColor">?android:textColorHint</item>
+    </style>
+
+    <style name="SwitchCompatStyle">
+        <item name="thumbTint">@color/switchstyle</item>
+        <item name="trackTint">@color/colorDarkGrey</item>
+    </style>
+
+    <style name="DashboardWidgetTitle">
+        <item name="android:textSize">@dimen/font12</item>
+    </style>
+
+    <style name="DashboardWidgetSubTitle">
+        <item name="android:textSize">@dimen/font14</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="TextViewInverse">
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+
+    <style name="EditTextStyle" parent="android:Widget.EditText">
+        <item name="android:textColor">?android:colorPrimary</item>
+        <item name="android:textSize">@dimen/font14</item>
+    </style>
+
+    <style name="TestTextStyle" parent="TextAppearance.AppCompat.Inverse">
+        <item name="android:textColor">?android:textColorHint</item>
+        <item name="android:textSize">@dimen/font14</item>
+    </style>
+
+</resources>

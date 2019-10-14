@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/get_donors_enf"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_height42"
+                android:gravity="center"
+                android:text="@string/all_donors"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:visibility="gone" />
+
+            <RadioGroup
+                android:id="@+id/radio_task"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/default_10"
+                android:paddingBottom="@dimen/default_10"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/radio_admin"
+                    style="@style/DarkTheme.Radiobutton.Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:checked="true"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/admin"
+                    android:theme="@style/DarkTheme.Radiobutton" />
+
+                <RadioButton
+                    android:id="@+id/radio_supervisor"
+                    style="@style/DarkTheme.Radiobutton.Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/default_24"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/supervisor"
+                    android:theme="@style/DarkTheme.Radiobutton" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/title_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:colorPrimary"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/default_8"
+                android:paddingBottom="@dimen/default_8">
+
+                <TextView
+                    android:layout_width="@dimen/layout_width0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@dimen/layout_weight5"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/default_16"
+                    android:text="@string/task_name"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font16" />
+
+
+                <TextView
+                    android:layout_width="@dimen/layout_width0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@dimen/layout_weight5"
+                    android:gravity="end"
+                    android:paddingEnd="@dimen/default_16"
+                    android:text="@string/schedule_date"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font16" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/task_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <include
+                android:id="@+id/no_record"
+                layout="@layout/no_task"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+</layout>

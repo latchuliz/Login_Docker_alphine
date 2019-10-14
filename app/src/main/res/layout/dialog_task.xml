@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height56"
+            android:background="?android:colorPrimary"
+            android:gravity="center"
+            android:text="@string/digital_insurance_claim"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font14" />
+
+        <ImageView
+            android:id="@+id/dialog_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="@dimen/default_16"
+            android:src="@drawable/ic_close_black_24dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/dialog_short_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/default_20"
+        android:layout_marginRight="@dimen/default_20"
+        android:layout_marginTop="@dimen/default_30"
+        android:text="@string/task_description"
+        android:textColor="@color/colorHistory"
+        android:textSize="@dimen/font16" />
+
+    <TextView
+        android:id="@+id/dialog_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/default_20"
+        android:layout_marginRight="@dimen/default_20"
+        android:layout_marginTop="@dimen/default_8"
+        android:lineSpacingExtra="@dimen/default_6"
+        android:paddingBottom="@dimen/default_40"
+        android:textColor="@color/colorHistory"
+        android:text="@string/dialog_task"
+        android:textSize="@dimen/font12" />
+
+</LinearLayout>

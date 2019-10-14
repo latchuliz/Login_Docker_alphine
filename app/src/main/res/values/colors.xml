@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0b4f7c</color>
+    <color name="colorPrimaryDark">#064873</color>
+    <color name="colorAccent">#0b4f7c</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlue">#0b4f7c</color>
+    <color name="colorGreen">#39a603</color>
+    <color name="colorRed">#d82d2d</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorGrey">#dedbdb</color>
+    <color name="colorDarkGrey">#b7b5b5</color>
+    <color name="colorMildBlue">#196ea7</color>
+    <color name="colorStatusBlue">#08446b</color>
+    <color name="colorLightBlue">#11a1c4</color>
+    <color name="colorInfoText">#777777</color>
+    <color name="colorLogText">#95000000</color>
+    <color name="colorOverlay">#64196ea7</color>
+    <color name="colorTestKit">#b0b0b0</color>
+    <color name="colorDashText">#575757</color>
+    <color name="colorRadio">#555555</color>
+    <color name="colorSync">#3a3a3a</color>
+    <color name="colorSyncW">#292929</color>
+    <color name="colorHistory">#666666</color>
+</resources>

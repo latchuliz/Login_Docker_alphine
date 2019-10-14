@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="positiveTxt"
+            type="java.lang.String" />
+
+        <variable
+            name="negativeTxt"
+            type="java.lang.String" />
+
+        <variable
+            name="neutralTxt"
+            type="java.lang.String" />
+
+        <variable
+            name="message"
+            type="java.lang.String" />
+
+        <variable
+            name="image"
+            type="java.lang.Boolean" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/parentPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="@dimen/abc_dialog_padding_material"
+                    android:src="@drawable/alert"
+                    app:visibility="@{safeUnbox(image)}" />
+
+                <TextView
+                    android:id="@android:id/message"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingLeft="?attr/dialogPreferredPadding"
+                    android:paddingTop="@dimen/abc_dialog_padding_material"
+                    android:paddingRight="?attr/dialogPreferredPadding"
+                    android:paddingBottom="@dimen/abc_dialog_padding_material"
+                    android:text="@{message}"
+                    app:visibility="@{message != null}" />
+
+                <View
+                    android:id="@+id/textSpacerNoButtons"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/abc_dialog_padding_top_material"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/buttonPanel"
+            style="?attr/buttonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:layoutDirection="locale"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@android:id/button3"
+                style="?attr/buttonBarNeutralButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:colorPrimary"
+                android:text="@{neutralTxt}"
+                android:textColor="?android:colorButtonNormal"
+                app:visibility="@{neutralTxt != null}" />
+
+            <Space
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                app:visibility="@{neutralTxt != null}" />
+
+            <Button
+                android:id="@android:id/button2"
+                style="?attr/buttonBarNegativeButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:colorPrimary"
+                android:text="@{negativeTxt}"
+                android:textColor="?android:colorButtonNormal"
+                app:visibility="@{negativeTxt != null}" />
+
+            <Space
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                app:visibility="@{positiveTxt != null &amp;&amp; negativeTxt != null}" />
+
+            <Button
+                android:id="@android:id/button1"
+                style="?attr/buttonBarPositiveButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:colorPrimary"
+                android:text="@{positiveTxt}"
+                android:textColor="?android:colorButtonNormal"
+                app:visibility="@{positiveTxt != null}"
+                tools:text="ok" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

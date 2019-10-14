@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/default_20"
+        android:orientation="vertical"
+        android:visibility="visible"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/steps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/default_20"
+            android:paddingEnd="@dimen/default_20"
+            android:scaleType="fitCenter"
+            android:src="@drawable/first" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/donor_identify"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_16"
+                    card_view:cardCornerRadius="@dimen/default_6"
+                    card_view:cardElevation="@dimen/default_10">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="@dimen/default_16"
+                        android:layout_marginEnd="@dimen/default_16">
+                        <AutoCompleteTextView
+                            android:id="@+id/task"
+                            style="@style/EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height48"
+                            android:layout_marginStart="@dimen/default_8"
+                            android:layout_marginEnd="@dimen/default_8"
+                            android:background="@null"
+                            android:completionThreshold="0"
+                            android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
+                            android:hint="@string/select_task"
+                            android:nextFocusForward="@+id/donor_name"
+                            android:singleLine="true" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height1"
+                            android:background="@color/colorGrey" />
+                        <EditText
+                            android:id="@+id/donor_name"
+                            style="@style/EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height48"
+                            android:layout_marginStart="@dimen/default_8"
+                            android:layout_marginEnd="@dimen/default_8"
+                            android:background="@null"
+                            android:digits="@string/validation"
+                            android:fontFamily="@font/roboto"
+                            android:hint="@string/tmp_name"
+                            android:imeOptions="actionDone"
+                            android:inputType="textCapSentences"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="@={fieldtest.name}"
+                            app:validateEmpty="@{true}"
+                            app:validateEmptyMessage="@{@string/valid_donor_name}" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height1"
+                            android:background="@color/colorGrey" />
+                        <FrameLayout
+                            android:id="@+id/donor_dob_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp">
+
+                            <Button
+                                android:id="@+id/donor_dob_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@null" />
+
+                            <EditText
+                                android:id="@+id/donor_dob"
+                                style="@style/EditTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/layout_height48"
+                                android:layout_marginStart="@dimen/default_8"
+                                android:layout_marginEnd="@dimen/default_8"
+                                android:background="@null"
+                                android:cursorVisible="false"
+                                android:drawableEnd="@drawable/calendar"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center_vertical"
+                                android:hint="@string/tmp_dob"
+                                android:text="@={fieldtest.dob}"
+                                app:validateEmpty="@{true}"
+                                app:validateEmptyMessage="@{@string/valid_donor_dob}" />
+                        </FrameLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height1"
+                            android:background="@color/colorGrey" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/tit_gender"
+                                style="@style/TestTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/layout_height48"
+                                android:layout_marginStart="@dimen/default_8"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center"
+                                android:text="@string/gender" />
+
+                            <RadioGroup
+                                android:id="@+id/radio_gender_group"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/layout_height48"
+                                android:layout_marginStart="@dimen/default_24"
+                                android:layout_marginEnd="@dimen/default_8"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/radio_male"
+                                    style="@style/DarkTheme.Radiobutton.Text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:checked="@{fieldtest.gender == null ? false : fieldtest.gender.equalsIgnoreCase(&quot;Male&quot;)}"
+                                    android:fontFamily="@font/roboto"
+                                    android:onClick="@{() -> fieldtest.setGender(&quot;Male&quot;)}"
+                                    android:text="@string/tmp_male"
+                                    android:theme="@style/DarkTheme.Radiobutton"
+                                    tools:checked="true" />
+
+                                <RadioButton
+                                    android:id="@+id/radio_female"
+                                    style="@style/DarkTheme.Radiobutton.Text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="@dimen/default_24"
+                                    android:checked="@{fieldtest.gender == null ? false : !fieldtest.gender.equalsIgnoreCase(&quot;Male&quot;)}"
+                                    android:fontFamily="@font/roboto"
+                                    android:onClick="@{() -> fieldtest.setGender(&quot;Female&quot;)}"
+                                    android:text="@string/tmp_female"
+                                    android:theme="@style/DarkTheme.Radiobutton" />
+                            </RadioGroup>
+                            <TextView
+                                android:id="@+id/test_gender_error"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/layout_height48"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                app:onClickShowError="@{true}" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height1"
+                            android:background="@color/colorGrey" />
+                        <EditText
+                            android:id="@+id/donor_email"
+                            style="@style/EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height48"
+                            android:layout_marginStart="@dimen/default_8"
+                            android:background="@null"
+                            android:fontFamily="@font/roboto"
+                            android:hint="@string/tmp_email"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="@={fieldtest.email}"
+                            app:validateEmpty="@{true}"
+                            app:validateEmptyMessage="@{@string/valid_donor_email}"
+                            app:validateRegex="@{emailRegex}"
+                            app:validateRegexMessage="@{@string/valid_donor_email_format}" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height1"
+                            android:background="@color/colorGrey" />
+                        <EditText
+                            android:id="@+id/donor_ssn"
+                            style="@style/EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height48"
+                            android:layout_marginStart="@dimen/default_8"
+                            android:background="@null"
+                            android:digits="@string/ssn_validation"
+                            android:fontFamily="@font/roboto"
+                            android:hint="@string/tmp_ssn"
+                            android:inputType="text"
+                            android:maxLength="20"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="@={fieldtest.ssn}" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height1"
+                            android:background="@color/colorGrey" />
+                        <EditText
+                            android:id="@+id/donor_mobile"
+                            style="@style/EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height48"
+                            android:layout_marginStart="@dimen/default_8"
+                            android:background="@null"
+                            android:digits="@string/mobile_validation"
+                            android:fontFamily="@font/roboto"
+                            android:hint="@string/tmp_mobile_number"
+                            android:inputType="phone"
+                            android:maxLength="14"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="@={fieldtest.mobileNumber}"
+                            app:validateEmpty="@{true}"
+                            app:validateEmptyMessage="@{@string/valid_donor_mobile}"
+                            app:validateMaxLength="@{14}"
+                            app:validateMaxLengthMessage="@{@string/valid_donor_max_mobile}"
+                            app:validateMinLength="@{5}"
+                            app:validateMinLengthMessage="@{@string/valid_donor_min_mobile}" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height1"
+                            android:background="@color/colorGrey" />
+                        <EditText
+                            android:id="@+id/donor_address"
+                            style="@style/EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height48"
+                            android:layout_marginStart="@dimen/default_8"
+                            android:background="@null"
+                            android:fontFamily="@font/roboto"
+                            android:hint="@string/tmp_address"
+                            android:imeOptions="actionDone"
+                            android:inputType="textCapSentences"
+                            android:maxLength="100"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="@={fieldtest.address}"
+                            app:validateEmpty="@{true}"
+                            app:validateEmptyMessage="@{@string/valid_donor_address}"
+                            app:validateMaxLength="@{100}"
+                            app:validateMaxLengthMessage="@{@string/valid_donor_max_address}"
+                            app:validateMinLength="@{20}"
+                            app:validateMinLengthMessage="@{@string/valid_donor_min_address}" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height1"
+                            android:background="@color/colorGrey" />
+                        <AutoCompleteTextView
+                            android:id="@+id/area"
+                            style="@style/EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height48"
+                            android:layout_marginStart="@dimen/default_8"
+                            android:layout_marginEnd="@dimen/default_8"
+                            android:background="@null"
+                            android:completionThreshold="0"
+                            android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
+                            android:hint="@string/select_area"
+                            android:nextFocusForward="@+id/donor_name"
+                            android:singleLine="true" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height1"
+                            android:background="@color/colorGrey" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/donor_image"
+                                style="@style/TestTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/layout_height48"
+                                android:layout_marginStart="@dimen/default_8"
+                                android:drawableEnd="@drawable/camera"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center_vertical"
+                                android:text="@string/tmp_donor_image" />
+                            <TextView
+                                android:id="@+id/donor_image_error"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/layout_height48"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                app:onClickShowError="@{true}" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/images"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/default_8"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/add_image"
+                                android:layout_width="@dimen/default_60"
+                                android:layout_height="@dimen/default_60"
+                                android:layout_marginTop="@dimen/default_10"
+                                android:src="@drawable/add_image" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/image_list"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height1"
+                            android:background="@color/colorGrey" />
+                        <AutoCompleteTextView
+                            android:id="@+id/id_type"
+                            style="@style/EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height48"
+                            android:layout_marginStart="@dimen/default_8"
+                            android:layout_marginEnd="@dimen/default_8"
+                            android:background="@null"
+                            android:completionThreshold="0"
+                            android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
+                            android:hint="@string/select_id_type"
+                            android:nextFocusForward="@+id/donor_address"
+                            android:singleLine="true"
+                            app:validateEmpty="@{true}" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height1"
+                            android:background="@color/colorGrey" />
+                        <EditText
+                            android:id="@+id/id_reference"
+                            style="@style/EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height48"
+                            android:layout_marginStart="@dimen/default_8"
+                            android:background="@null"
+                            android:fontFamily="@font/roboto"
+                            android:hint="@string/tmp_id_ref"
+                            android:imeOptions="actionDone"
+                            android:inputType="textCapSentences"
+                            android:maxLength="100"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="@={fieldtest.idReferenceNo}"
+                            app:validateEmpty="@{true}" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height1"
+                            android:background="@color/colorGrey" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/id_image"
+                                style="@style/TestTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/layout_height48"
+                                android:layout_marginStart="@dimen/default_8"
+                                android:drawableEnd="@drawable/camera"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center_vertical"
+                                android:text="@string/tmp_id_image" />
+                            <TextView
+                                android:id="@+id/id_image_error"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/layout_height48"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                app:onClickShowError="@{true}" />
+                        </LinearLayout>
+                        <include android:id="@+id/add_id_image"
+                            layout="@layout/adapter_imagelist"/>
+                        <TextView
+                            android:id="@+id/next_step_two"
+                            android:layout_width="@dimen/layout_width200"
+                            android:layout_height="@dimen/layout_height42"
+                            android:layout_margin="@dimen/default_20"
+                            android:background="@drawable/button_rect_blue"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:text="@string/tmp_next"
+                            android:textColor="@color/colorWhite" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+
+        </ScrollView>
+    </LinearLayout>
+
+    <data>
+
+        <variable
+            name="fieldtest"
+            type="com.neopharma.datavault.data.local.entity.FieldTest" />
+
+        <variable
+            name="emailRegex"
+            type="java.lang.String" />
+    </data>
+
+
+</layout>

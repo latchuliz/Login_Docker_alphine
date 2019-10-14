@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="datafetch"
+            type="com.neopharma.datavault.fragments.viewmodel.DataFetchViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/network_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/default_20"
+            android:layout_marginBottom="@dimen/default_20"
+            android:src="@drawable/data_update" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/network_logo"
+            android:layout_centerInParent="true"
+            android:text="New data updating from the server"
+            android:textColor="@color/colorDashText" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_logo"
+            android:layout_below="@+id/text"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="@dimen/layout_height0"
+                    android:layout_height="36dp"
+                    android:layout_weight="@dimen/layout_weight5"
+                    android:paddingStart="@dimen/default_60"
+                    android:text="Profile"
+                    android:textColor="@color/colorHistory"
+                    android:textSize="@dimen/font18"
+                    android:textStyle="bold" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/profile_bar"
+                    android:layout_width="@dimen/layout_height0"
+                    android:layout_height="36dp"
+                    android:layout_weight="0.5"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="sync_icon.json"
+                    app:lottie_loop="true"
+                    app:tint="@color/colorAccent"
+                    app:visibility="@{!datafetch.profileFetchComplete}" />
+
+                <ImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="@dimen/layout_width0"
+                    android:layout_height="36dp"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/complete"
+                    app:visibility="@{datafetch.profileFetchComplete}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_8">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="0.5"
+                    android:paddingStart="@dimen/default_60"
+                    android:text="Kit"
+                    android:textColor="@color/colorHistory"
+                    android:textSize="@dimen/font18"
+                    android:textStyle="bold" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/kit_bar"
+                    android:layout_width="@dimen/layout_width0"
+                    android:layout_height="36dp"
+                    android:layout_weight="0.5"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="sync_icon.json"
+                    app:lottie_loop="true"
+                    app:tint="@color/colorAccent"
+                    app:visibility="@{!datafetch.kitFetchComplete}" />
+
+                <ImageView
+                    android:id="@+id/kit_image"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/complete"
+                    app:visibility="@{datafetch.kitFetchComplete}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_8">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="0.5"
+                    android:paddingStart="@dimen/default_60"
+                    android:text="Task"
+                    android:textColor="@color/colorHistory"
+                    android:textSize="@dimen/font18"
+                    android:textStyle="bold" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/task_bar"
+                    android:layout_width="@dimen/layout_width0"
+                    android:layout_height="36dp"
+                    android:layout_weight="0.5"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="sync_icon.json"
+                    app:lottie_loop="true"
+                    app:tint="@color/colorAccent"
+                    app:visibility="@{!datafetch.adminTaskFetchComplete}" />
+
+                <ImageView
+                    android:id="@+id/task_image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/complete"
+                    app:visibility="@{datafetch.adminTaskFetchComplete}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_8">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="0.5"
+                    android:paddingStart="@dimen/default_60"
+                    android:text="Donor"
+                    android:textColor="@color/colorHistory"
+                    android:textSize="@dimen/font18"
+                    android:textStyle="bold" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/donor_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="0.5"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="sync_icon.json"
+                    app:lottie_loop="true"
+                    app:visibility="@{!datafetch.adminDonorFetchComplete}" />
+
+                <ImageView
+                    android:id="@+id/donor_image"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/complete"
+                    app:visibility="@{datafetch.adminDonorFetchComplete}" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/bottom_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/logo_dv" />
+    </RelativeLayout>
+</layout>

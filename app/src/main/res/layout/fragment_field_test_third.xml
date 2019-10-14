@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fieldtest"
+            type="com.neopharma.datavault.data.local.entity.FieldTest" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/default_20"
+        android:layout_marginBottom="@dimen/default_20"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/default_20"
+            android:paddingEnd="@dimen/default_20"
+            android:scaleType="fitCenter"
+            android:src="@drawable/third"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/test_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_16"
+                card_view:cardCornerRadius="@dimen/default_6"
+                card_view:cardElevation="@dimen/default_10">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_16"
+                    android:scrollbars="none">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/test_image"
+                            style="@style/TestTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_height48"
+                            android:layout_marginStart="@dimen/default_8"
+                            android:layout_marginEnd="@dimen/default_8"
+                            android:drawableEnd="@drawable/camera"
+                            android:fontFamily="@font/roboto"
+                            android:gravity="center_vertical"
+                            android:text="@string/tmp_test_kit" />
+
+                        <TextView
+                            android:id="@+id/test_image_error"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height48"
+                            android:layout_toRightOf="@+id/test_image"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            app:onClickShowError="@{true}" />
+
+
+                        <LinearLayout
+                            android:id="@+id/images"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/test_image"
+                            android:layout_marginStart="@dimen/default_8"
+                            android:orientation="horizontal">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/test_image_list"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/add_image"
+                                android:layout_width="@dimen/default_60"
+                                android:layout_height="@dimen/default_60"
+                                android:layout_marginTop="@dimen/default_10"
+                                android:src="@drawable/add_image" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tit_result"
+                            style="@style/TestTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_height48"
+                            android:layout_below="@+id/images"
+                            android:layout_marginStart="@dimen/default_8"
+                            android:fontFamily="@font/roboto"
+                            android:gravity="center"
+                            android:text="@string/tmp_result" />
+
+                        <RadioGroup
+                            android:id="@+id/radio_result_group"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_height48"
+                            android:layout_below="@+id/images"
+                            android:layout_marginStart="@dimen/default_8"
+                            android:layout_marginEnd="@dimen/default_8"
+                            android:layout_toRightOf="@+id/tit_result"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_positive"
+                                style="@style/DarkTheme.Radiobutton.Text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:checked="@{fieldtest.result == null ? false : fieldtest.result.equalsIgnoreCase(&quot;Positive&quot;)}"
+                                android:fontFamily="@font/roboto"
+                                android:onClick="@{() -> fieldtest.setResult(&quot;Positive&quot;)}"
+                                android:text="@string/tmp_positive"
+                                android:theme="@style/DarkTheme.Radiobutton"
+                                tools:checked="true" />
+
+                            <RadioButton
+                                android:id="@+id/radio_negative"
+                                style="@style/DarkTheme.Radiobutton.Text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/default_8"
+                                android:checked="@{fieldtest.result == null ? false : !fieldtest.result.equalsIgnoreCase(&quot;Positive&quot;)}"
+                                android:fontFamily="@font/roboto"
+                                android:onClick="@{() -> fieldtest.setResult(&quot;Negative&quot;)}"
+                                android:text="@string/tmp_negative"
+                                android:theme="@style/DarkTheme.Radiobutton" />
+                        </RadioGroup>
+
+                        <TextView
+                            android:id="@+id/test_result_error"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height48"
+                            android:layout_below="@+id/images"
+                            android:layout_toRightOf="@+id/radio_result_group"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            app:onClickShowError="@{true}" />
+
+                        <View
+                            android:id="@+id/line3"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height1"
+                            android:layout_below="@+id/tit_result"
+                            android:background="@color/colorGrey" />
+
+                        <TextView
+                            android:id="@+id/adulterant_result"
+                            style="@style/TestTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_height48"
+                            android:layout_below="@id/line3"
+                            android:layout_marginStart="@dimen/default_8"
+                            android:fontFamily="@font/roboto"
+                            android:gravity="center"
+                            android:text="@string/adulterant_result" />
+
+                        <RadioGroup
+                            android:id="@+id/adulterant_result_group"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_height48"
+                            android:layout_below="@+id/line3"
+                            android:layout_marginStart="@dimen/default_8"
+                            android:layout_marginEnd="@dimen/default_8"
+                            android:layout_toEndOf="@+id/adulterant_result"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/adulterant_result_positive"
+                                style="@style/DarkTheme.Radiobutton.Text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:checked="@{fieldtest.adulterantResult == null ? false : fieldtest.adulterantResult.equalsIgnoreCase(&quot;Passed&quot;)}"
+                                android:fontFamily="@font/roboto"
+                                android:onClick="@{() -> fieldtest.setAdulterantResult(&quot;Passed&quot;)}"
+                                android:text="@string/tmp_passed"
+                                android:theme="@style/DarkTheme.Radiobutton"
+                                tools:checked="true" />
+
+                            <RadioButton
+                                android:id="@+id/adulterant_result_negative"
+                                style="@style/DarkTheme.Radiobutton.Text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/default_8"
+                                android:checked="@{fieldtest.adulterantResult == null ? false : !fieldtest.adulterantResult.equalsIgnoreCase(&quot;Passed&quot;)}"
+                                android:fontFamily="@font/roboto"
+                                android:onClick="@{() -> fieldtest.setAdulterantResult(&quot;Failed&quot;)}"
+                                android:text="@string/tmp_failed"
+                                android:theme="@style/DarkTheme.Radiobutton" />
+                        </RadioGroup>
+
+                        <TextView
+                            android:id="@+id/adulterant_result_error"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height48"
+                            android:layout_below="@+id/line3"
+                            android:layout_toRightOf="@+id/adulterant_result_group"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            app:onClickShowError="@{true}" />
+
+                        <View
+                            android:id="@+id/line2"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height1"
+                            android:layout_below="@+id/adulterant_result"
+                            android:background="@color/colorGrey" />
+
+                        <EditText
+                            android:id="@+id/test_comment"
+                            style="@style/EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height48"
+                            android:layout_below="@+id/line2"
+                            android:layout_marginStart="@dimen/default_8"
+                            android:layout_marginEnd="@dimen/default_8"
+                            android:background="@null"
+                            android:fontFamily="@font/roboto"
+                            android:hint="@string/comments"
+                            android:inputType="textCapSentences"
+                            android:text="@={fieldtest.officerComments}" />
+
+                        <View
+                            android:id="@+id/line"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height1"
+                            android:layout_below="@+id/test_comment"
+                            android:background="@color/colorGrey" />
+
+                        <TextView
+                            android:id="@+id/submit"
+                            android:layout_width="@dimen/layout_width200"
+                            android:layout_height="@dimen/layout_height42"
+                            android:layout_below="@+id/line"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="@dimen/default_20"
+                            android:background="@drawable/button_rect_blue"
+                            android:gravity="center"
+                            android:text="@string/tmp_submit"
+                            android:textColor="@color/colorWhite" />
+
+                    </RelativeLayout>
+
+                </ScrollView>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>
